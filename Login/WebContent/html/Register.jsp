@@ -1,0 +1,148 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Cool-Register</title>
+	<link rel="icon" href="../images/logo.jpg">
+	<link rel="stylesheet" type="text/css" href="../css/register.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+</head>
+<body style="overflow-x:hidden">
+<nav class="navbar navbar-default navbar-inverse" style="opacity:0.8;position:fixed;width:100%">
+	<div class="container" style="padding-top:10px; padding-bottom:10px;">
+		<div class="navbar-header ">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<img src="../images/logo.jpg" alt="logo.jpg" width="20%" height="auto" class="pull-left" style="padding-right:5px">
+			<a href="Home.html" class="navbar-brand" style="color: white;"><b>CoolStuff</b></a>
+		</div> 
+		
+		<div id="navbar-collapse" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="shop.html">Products</a></li>
+				<li ><a href="const.html">Cool Stuff Team</a></li>
+				<li ><a href="const.html">Fashion</a></li>
+				<li><a href="const.html">News</a></li>
+				<li><a href="const.html">Dealers</a></li>
+			</ul>
+		</div>
+	</div> 
+</nav>
+<div class="row">
+    <div class="col-sm-12 login-subheading">
+        <p class="text-center hidden-xs" style="margin-top:10%">REGISTER</p>
+        <div class="hidden-sm hidden-md hidden-lg" style="position:relative">
+        <hr class="login-underline" style="margin-bottom:3%">
+            <p style = "text-align:center; margin-top:-40px;"><span class ="glyphicon glyphicon-triangle-bottom" style = "color: #265A88; font-size:50%;"></span></p>
+        </div>
+    </div>
+</div>
+	<div class="container reg-form-padding">
+		<div class="row">
+			<form class="form-horizontal reg-box-style" action="/Login/Register" id="form1" method="POST">
+				<div class="col-sm-6" style="padding-right:70px">
+					<h4><b>Contact Information</b></h4>
+					
+			    		<div class="form-group">
+			      			<label class="col-sm-4  " for="reg-fname">First Name<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="text" class="form-control" name="reg-fname" id="reg-fname" required>
+			        		</div>
+			    		</div>	
+			    		<div class="form-group">
+			      			<label class="col-sm-4" for="reg-lname">Last Name<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="text" class="form-control" name="reg-lname" id="reg-lname" required>
+			        		</div>
+			    		</div>
+			    		<div class="form-group">
+			      			<label class="col-sm-4" for="reg-email">Email<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="email" class="form-control" name="reg-email" id="reg-email" required>
+			        		</div>
+			    		</div>
+			    		<div class="form-group">
+			      			<label class="col-sm-4" for="reg-number">Number<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="text" class="form-control" pattern="[7-9][0-9]{9}$" maxlength="10" name="reg-number" id="reg-number" required>
+			        		</div>
+			    		</div>
+			    	
+			    	<h4><b>Your Password</b></h4>
+			    	<div class="psw-error" style="color:#ff0000;display:none">
+                        <p>The password and confirm password should match</p>
+                    </div>
+			    	
+			    		<div class="form-group">
+			      			<label class="col-sm-4  " for="reg-psw">Password<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="password" pattern=".{6,}" class="form-control" name="reg-psw" id="reg-psw" required>
+			        		</div>
+			    		</div>	
+			    		<div class="form-group">
+			      			<label class="col-sm-4" for="reg-cnfpsw">Confirm Password<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="password" class="form-control" id="reg-cnfpsw" required>
+			        		</div>
+			        	</div>
+			        
+				</div>
+				<div class="col-sm-6" style="padding-right:70px">
+					<h4><b>Your Address</b></h4>	
+			    		<div class="form-group">
+			      			<label class="col-sm-4" for="reg-address1">Address1<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="text" class="form-control" name="reg-address1" id="reg-address1" required>
+			        		</div>
+			    		</div>
+			    		<div class="form-group">
+			      			<label class="col-sm-4" for="reg-address2">Address2<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="text" class="form-control" name="reg-address2" id="reg-address2" required>
+			        		</div>
+			    		</div>
+			    		<div class="form-group">
+			      			<label class="col-sm-4" for="reg-address3">Address3</label>
+			      			<div class="col-sm-8">
+			        			<input type="text" class="form-control" name="reg-address3" id="reg-address3">
+			        		</div>
+			    		</div>
+			    		<div class="form-group">
+			      			<label class="col-sm-4" for="reg-city">City<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="text" class="form-control" name="reg-city" id="reg-city" required>
+			        		</div>
+			    		</div>
+			    		<div class="form-group">
+			      			<label class="col-sm-4" for="reg-postcode">Postcode<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="text" class="form-control" pattern="[0-9]{6}" maxlength="6" name="reg-postcode" id="reg-postcode" required>
+			        		</div>
+			    		</div>
+			    		<div class="form-group">
+			      			<label class="col-sm-4" for="reg-location">Region/State<span class="asterisk">*</span></label>
+			      			<div class="col-sm-8">
+			        			<input type="text" class="form-control" name="reg-location" id="reg-locaiton" required>
+			        		</div>
+			    		</div>
+			    	<input type="submit" class=" hidden-xs btn btn-primary register-btn password-submit" value="REGISTER" name="Submit">
+			    	<input type="submit" class=" hidden-sm hidden-md hidden-lg btn btn-primary register-btn pull-left password-submit" style="margin-left:10px"  value="REGISTER" name="Submit"> 	
+			    	
+					
+				</div>
+			</form>
+		</div>
+	</div>	
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
+<script type="text/javascript" src="../js/register.js"></script>
+</body>

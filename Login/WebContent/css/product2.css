@@ -1,0 +1,203 @@
+.product-description-container{
+  padding-top: 10px;
+}
+/*CAROUSEL*/
+
+.article-slide .carousel-inner > .item > img,
+ .article-slide .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+ }
+
+ /* Main carousel style */
+
+.slickOuterCarousel .slick-list{
+  margin-top: 50px;
+}
+.slickOuterCarousel .slick-dots::before{
+  content:'Available Colors:';
+  margin-right: 20px;
+}
+.slickOuterCarousel .slick-dots{
+  bottom: 350px;
+  text-align: unset;
+  left:10%;
+}
+.slickOuterCarousel .slick-dots li{
+ top:4px;
+}
+
+.slickOuterCarousel .slick-dots li button::before {
+  content: normal;
+}
+
+.slickOuterCarousel .slick-dots li button{
+  border: none;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+      background-color: red;
+
+}
+
+.article-slide .glyphicon-chevron-left::before {
+    content: url(../images/left-disable.png);
+}
+
+.article-slide .glyphicon-chevron-left.special::before {
+    content: url(../images/left-enable.png);
+}
+.article-slide .glyphicon-chevron-right::before {
+    content: url(../images/right-enable.png);
+}
+.article-slide .glyphicon-chevron-right.special::before {
+    content: url(../images/right-disable.png);
+}
+
+/* Indicators list style */
+.article-slide .carousel-indicators {
+    margin-left: 100px;
+    margin-top: 50px;
+    position: static;
+    width: 80%;
+}
+/* Indicators list style */
+.article-slide .carousel-indicators li {
+    border: medium none;
+    border-radius: 0;
+    float: left;
+    height: 54px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 5px !important;
+    margin-top: 0;
+    width: 100px;
+}
+/* Indicators images style */
+.article-slide .carousel-indicators img {
+    border: 2px solid #FFFFFF;
+    float: left;
+    height: 54px;
+    left: 0;
+    width: 100px;
+}
+/* Indicators active image style */
+.article-slide .carousel-indicators .active img {
+    border: 2px solid #428BCA;
+    opacity: 0.7;
+}
+
+.article-slide .carousel-control {
+  position: static;
+}
+
+.article-slide .carousel-control.left{
+  background-image: none;
+  background-repeat: no-repeat;
+}
+
+.article-slide .carousel-control .icon-prev,.article-slide .carousel-control .glyphicon-chevron-left{
+  left: 10%;
+}
+
+.article-slide .carousel-control.right{
+  background-image: none;
+  background-repeat: no-repeat;
+}
+
+.article-slide .carousel-control .icon-next,.article-slide .carousel-control .glyphicon-chevron-right{
+  right: 10%;
+}
+
+/*SIDEBAR*/
+.product_details_sidebar {
+   margin: 0 0 0 auto ;
+   padding-bottom:30px
+}
+
+
+/* Reviews */
+.review .product_rating{
+    border-top : 1px solid;
+    padding:15px 0;
+}
+
+.review .product_rating img{
+  position: relative;
+  bottom:1.9px;
+}
+
+/* Stock Availability and Deleviery */
+.stock_delivery {
+    font-size : 13.2px;
+  }
+ .stock_delivery .availability{
+   padding-right: 70px;
+
+ }
+
+  .availability  .instock{
+    color:green;
+  }
+
+ .pin{
+    margin: 15px 0px;
+ }
+/* Buy Frame and Lens */
+.buy .label{
+  padding-top: 0.9em;
+  padding-bottom: 0.9em;
+  margin-bottom:0.3em;
+}
+
+/* Navbar*/
+.with-nav-tabs.panel-default .nav-tabs > li > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li > a:focus {
+    color: #777;
+    background-color: #ddd;
+    border-color: transparent;
+}
+
+.with-nav-tabs.panel-default .nav-tabs > li.active > a,
+.with-nav-tabs.panel-default .nav-tabs > li.active > a:hover,
+.with-nav-tabs.panel-default .nav-tabs > li.active > a:focus {
+    color: #555;
+    background-color: #fff;
+    border-color: black black transparent;
+
+}
+.specs-review .panel-body{
+    background-color: #e0e0e0;
+}
+.product-description a{
+    margin-right: 5px;
+    border: 1px solid black !important;
+}
+.product-description > li.active > a{
+    border-color: black black transparent !important;
+    color: #555;
+}
+.product-description .panel-body{
+    border-color: transparent black black;
+}
+ul.product-description a{
+  color: #000;
+}
+#specifications .row div div{
+    display: inline-block;
+    padding: 0px 10px;
+    background-color: #FFF;
+}
+#specifications .row div{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+p.reviewing-item{
+    margin-top: 15px;
+}
+.no-padding{
+    padding: 0px !important;
+}
+.car-images{
+  height:250px!important;
+  width:auto!important;
+}

@@ -11,8 +11,10 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="../css/Logout.css">
+	
 </head>
-<body style="background-image: url("../images/back2.jpg");background-size: cover;">
+<body style="background="../images/back2.jpg")">
 
 <nav class="navbar navbar-default navbar-inverse"
 		style="opacity:0.8;position:fixed;width:100%">
@@ -43,10 +45,10 @@
 	<div class="container-fluid text-center">
 		<h3 style="padding-top: 20%">
 			You have logged out successfully</h3>
-		<h5 style="padding-top: 10%">
+		<h4 style="padding-top: 10%">
 			Click <a href="Login.jsp">here</a> to redirect to our login
 			page
-		</h5>
+		</h4>
 		<%  
             session.invalidate(); 
 		%>

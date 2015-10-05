@@ -30,16 +30,16 @@ public class Login extends HttpServlet {
 			
 			
 			while(rs.next()){
-				System.out.println("entered first if");
+				//System.out.println("entered first if");
 				String dbPassword = rs.getString("password");
 				String dbUsername = rs.getString("username");
-				System.out.println(dbUsername+""+dbPassword);
-				if(dbPassword.equals(pass) && (dbUsername.equalsIgnoreCase(userID))){
+				//System.out.println(dbUsername+""+dbPassword);
+				if(dbPassword.equals(pass) && (dbUsername.equals(userID))){//equalsIgnoreCase
 					request.getRequestDispatcher("/html/Successful_login.jsp").forward(request, response);
 					HttpSession session=request.getSession();  
 			        session.setAttribute("userID",dbUsername);
 			        session.setAttribute("login-pwd",dbPassword);
-					System.out.println("entered second if");
+					//System.out.println("entered second if");
 					break;
 				}
 				if(!rs.isLast()){
@@ -47,7 +47,7 @@ public class Login extends HttpServlet {
 				}
 				else{
 					//response.sendRedirect("Login.jsp");
-					System.out.println("entered second else");
+					//System.out.println("entered second else");
 					HttpSession session=request.getSession();
 					session.setAttribute("error-message", "The username or password is wrong");
 					//request.getRequestDispatcher("/html/Login.jsp").forward(request, response);

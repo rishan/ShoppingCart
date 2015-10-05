@@ -15,7 +15,9 @@
 </head>
 <body>
 <%
-if(!session.isNew()){
+String userID=request.getParameter("userID");
+if(!session.isNew() && userID!=null){
+	System.out.println(request.getParameter("userID"));
 	response.sendRedirect("shop.html");
 }
 %>

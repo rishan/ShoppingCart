@@ -8,6 +8,7 @@ $(document).ready(function(){
 		$('.localheading').html("SHOES");
 		$('.tablinks').removeClass("coloredtabs");
 		$(".shoes>.tablinks").addClass("coloredtabs");
+		$(this).on("click",ShoeFunction());
 	});
 	$(".electronics").click(function(){
 		$('.localheading').html("ELECTRONICS");
@@ -94,7 +95,7 @@ $(document).ready(function(){
 			for(var key in arr){
 				console.log(key);
 				var i;
-				Item_data+='<div id="'+key+'" class="col-sm-3 Item-brief-descri product products mycatalogue1" data-tag="'+arr[key].gender+';'+arr[key].pricerange+';'+arr[key].stock+';all">\
+				Item_data+='<div id="'+arr[key].productID+'" class="col-sm-3 Item-brief-descri product products mycatalogue1" data-tag="'+arr[key].gender+';'+arr[key].pricerange+';'+arr[key].stock+';all">\
 						   <a style="cursor:pointer"><img src="'+ arr[key].productimage +'" alt="shoe-pair-1" style="width:50%; height:100px"></a>\
 						   <a style="cursor:pointer"><p class="Item-name">'+ arr[key].description +'</p></a>\
 						   <p class="Item-cost">Price: ₹'+ arr[key].price +'</p>\

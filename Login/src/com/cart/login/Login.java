@@ -38,6 +38,7 @@ public class Login extends HttpServlet {
 					request.getRequestDispatcher("/html/Successful_login.jsp").forward(request, response);
 					HttpSession session=request.getSession();  
 			        session.setAttribute("userID",dbUsername);
+			        System.out.println(dbUsername);
 			        session.setAttribute("login-pwd",dbPassword);
 					//System.out.println("entered second if");
 					break;

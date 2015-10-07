@@ -31,6 +31,7 @@ public class ShoeProduct implements Serializable{
     private String Color;
     private String Design;
     private String Otherdetails;
+    
 	public String getProductimage() {
 		return Productimage;
 	}

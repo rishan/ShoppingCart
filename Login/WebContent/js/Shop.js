@@ -47,6 +47,9 @@ $(document).ready(function(){
     });
    $("#redirect2").click(function(){
    		activaTab('data-shoes');
+   		$('.localheading').html("SHOES");
+		$('.tablinks').removeClass("coloredtabs");
+		$(".shoes>.tablinks").addClass("coloredtabs");
     	$('.shoes').on("click",ShoeFunction());
     });
    $("#redirect3").click(function(){
@@ -80,20 +83,34 @@ $(document).ready(function(){
 			  data:{"type":"shoes"},
 			  success: function(data){
 				  Shoefunction1(data);
+				  $(".mycatalogue1").unbind("click",Productfunction);
+				  $(".mycatalogue1").bind("click",Productfunction);
+
+					
 			  }
 	   });
    }
    
+   function Productfunction(){
+		//alert("bla");
+		console.log(this.id);
+		var productID=this.id;
+		$.ajax({
+			  type: "GET",
+			  url: "../Product1",
+			  data: {"clickedProductID":productID},
+			  success:function(){
+				  window.location="../Product1";
+			  }
+			  });
+		
+	}; 
+	
    function Shoefunction1(result){
-	  console.log("got result");
-	  //console.log(result);
-	  console.log(typeof result);
-	  console.log(result[0])
-	  console.log(result[1].gender)
+	
 	  var Item_data="";
 		function pagedata(arr) {
 			for(var key in arr){
-				console.log(key);
 				var i;
 				Item_data+='<div id="'+arr[key].productID+'" class="col-sm-3 Item-brief-descri product products mycatalogue1" data-tag="'+arr[key].gender+';'+arr[key].pricerange+';'+arr[key].stock+';all">\
 						   <a style="cursor:pointer"><img src="'+ arr[key].productimage +'" alt="shoe-pair-1" style="width:50%; height:100px"></a>\
@@ -105,30 +122,9 @@ $(document).ready(function(){
 			}
 		pagedata(result);
 		$('#product-data1').html(Item_data);
-	  //console.log(result.gender);
-//	  for(var key in result){
-//		  Itemdata[key]=result[key];
-//	  }
-	  //Itemdata=result;
-   }
-   console.log(Itemdata)
 
-   
-//	var Item_data="";
-//	function pagedata(arr) {
-//		for(var key in arr){
-//			console.log(key);
-//			var i;
-//			Item_data+='<div id="'+key+'" class="col-sm-3 Item-brief-descri product products mycatalogue1" data-tag="'+arr[key].gender+';'+arr[key].pricerange+';'+arr[key].stock+';all">\
-//					   <a style="cursor:pointer"><img src="'+ arr[key].productimage +'" alt="shoe-pair-1" style="width:50%; height:100px"></a>\
-//					   <a style="cursor:pointer"><p class="Item-name">'+ arr[key].description +'</p></a>\
-//					   <p class="Item-cost">Price: ₹'+ arr[key].price +'</p>\
-//					   <p>Availability:'+ arr[key].stock +' </p>\
-//					   </div>'
-//			}
-//		}
-//	pagedata(Itemdata);
-//	$('#product-data1').html(Item_data);
+   }
+
 
 	
 	$('.filterbox').on('change', function(){
@@ -175,16 +171,44 @@ $(document).ready(function(){
             		}
             	});
 	    	});
-	$(".mycatalogue1").wrap('<a href="product1.html"></a>'); 	
-	$(".mycatalogue1").click(function(){
-	for(var abc in Itemdata){
-		if($(this).attr("id")==abc){
-			 localStorage.setItem('cata_category', JSON.stringify(Itemdata[abc]));
-		}
-	}
-});
+//	//$(".mycatalogue1").wrap('<a href="product1.jsp"></a>'); 	
+//	$(".mycatalogue1").click(Productfunction);
+//	
+//	console.log("mycatalogue1===== ", $(".mycatalogue1").length);
+//	
+//	function Productfunction(){
+//		alert("bla");
+//		console.log(this.id);
+//		//String productID=$(this).attr("id");
+////		$.ajax({
+////			url:"/Login/Product1",
+////			type:"post",
+////			data:{"clickedProductID":productID}
+////		});
+////		window.location.href("product1.jsp");
+//	};
+////	for(var abc in Itemdata){
+//		
+//		if($(this).attr("id")==abc){
+//			String productID=$(this).attr("id");
+//			 localStorage.setItem('cata_category', JSON.stringify(Itemdata[abc]));
+//			 //sessionStorage.setItem("clickedProductID", $(this).attr("id"));
+//			 $.ajax({
+//				  url:"/Login/Product1",
+//				  type:"post",
+//				  //datatype:"Object",
+//				  data:{"clickedProductID":productID},
+////				  success: function(data){
+////					  Shoefunction1(data);
+////				  }
+//		   });
+//			 
+//		}
+//	}
+//	//window.location.href("product1.jsp");
+//});
 
-///*electronics*/
+/*electronics*/
 //	var elec_data="";
 //
 //	function elecdata1(arr) {
@@ -219,7 +243,35 @@ $(document).ready(function(){
 //	    			category_list2=["all"];
 //	    		}
 //	    		$('.products-elec').each(function(){
-//        			var cats=$(this).data('tagelec').split(';');
+//	    			var elec_data="";
+//
+//	    			function elecdata1(arr) {
+//	    				for(var key in arr){
+//	    					var i;
+//	    					elec_data+='<div id="'+key+'" class="col-sm-3 Item-brief-descri product products-elec mycatalogue" data-tagelec="'+arr[key].typee+';'+arr[key].pricerange+';all">\
+//	    							   <a style="cursor:pointer"><img src="'+ arr[key].Productimage +'" alt="" style="width:50%; height:100px"></a>\
+//	    							   <a style="cursor:pointer"><p class="Item-name">'+ arr[key].Description +'</p></a>\
+//	    							   <p class="Item-cost">Price: ₹'+ arr[key].Price +'</p>\
+//	    							   <p>Availability:'+ arr[key].stock +' </p>\
+//	    							   </div>'
+//	    					}
+//	    				}
+//	    			elecdata1(elecdata);
+//	    			$('#product-electronics').html(elec_data);
+//
+//	    		$('.filterbox-elec').on('change', function(){
+//	    			    		var category_list = [];
+//	    			    		$('#type_elec input:checked').each(function(){
+//	    			      		var category = $(this).val();
+//	    			      		category_list.push(category); 
+//	    			    		});
+//	    			    		var category_list2 = [];
+//	    			    		$('#prices_elec input:checked').each(function(){
+//	    			      		var category2 = $(this).val();
+//	    			      		category_list2.push(category2); 
+//	    			    		});
+//	    			    		if(category_list.length==0){
+//	    			    			c      			var cats=$(this).data('tagelec').split(';');
 //            		var checkMatches=$.grep(category_list, function(val){                
 //               		 return $.inArray(val, cats) >-1;
 //           			 }); 

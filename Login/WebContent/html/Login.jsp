@@ -17,7 +17,7 @@
 <%
 String userID=request.getParameter("userID");
 if(!session.isNew() && userID!=null){
-	System.out.println(request.getParameter("userID"));
+	System.out.println("The current user id is "+request.getParameter("userID"));
 	response.sendRedirect("shop.html");
 }
 %>

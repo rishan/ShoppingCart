@@ -1,0 +1,33 @@
+.login-subheading {
+	font-size: 200%;
+	padding-top: 20px;
+	padding-bottom: 5%;
+}
+
+.login button {
+	/* width: 120px; */
+	height: 48px;
+	font-family: Open Sans;
+	font-size: 24px;
+	color: #FFF;
+	padding: 0px 12px;
+	border: 0px;
+	background-color: #016aab;
+	border-radius: 0 !important;
+}
+
+body {
+	background-image: url("../images/back2.jpg");
+	background-size: cover;
+}
+
+#recovsuccess, #recovfail {
+	display: none;
+}
+
+#login-warning {
+	font-size: 16px;
+	font-weight: bold;
+	color: red;
+	padding-left: 5%;
+}

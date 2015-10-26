@@ -1,0 +1,13 @@
+<%@ page language="java" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Hello</h1>
+<% String hello="hello"; 
+out.println(hello);%>
+</body>
+</html>

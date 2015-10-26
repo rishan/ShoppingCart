@@ -1,0 +1,41 @@
+body {
+	background-image: url("../images/back4.jpg");
+	background-size: cover;
+}
+
+.login-subheading {
+	font-size: 250%;
+	font-family: Open Sans;
+}
+
+.reg-box-style input {
+	border-radius: 0px;
+}
+
+.reg-form-padding {
+	padding: 40px 0px 80px 10px !important;
+}
+
+#reg-warning{
+	font-size: 16px;
+	font-weight: bold;
+	color: red;
+	padding-left: 5%;
+}
+
+.register-btn {
+	/* width: 120px; */
+	height: 36px !important;
+	font-family: Open Sans !important;
+	font-size: 14px !important;
+	color: #FFF;
+	padding: 0px 60px !important;
+	border: 0px;
+	background-color: #016aab;
+	border-radius: 0 !important;
+	margin-left: 182px;
+}
+
+.asterisk {
+	color: #ff0000;
+}
